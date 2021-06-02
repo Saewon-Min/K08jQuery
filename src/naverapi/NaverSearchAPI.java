@@ -21,14 +21,14 @@ public class NaverSearchAPI {
 
         String text = null;
         try {
-            text = URLEncoder.encode("가산디지털단지역 맛집", "UTF-8");
+            text = URLEncoder.encode("신논현 맛집", "UTF-8");
         } catch (UnsupportedEncodingException e) {
             throw new RuntimeException("검색어 인코딩 실패",e);
         }
 
 
-        String apiURL = "https://openapi.naver.com/v1/search/blog?query=" + text;    // json 결과
-        //String apiURL = "https://openapi.naver.com/v1/search/blog.xml?query="+ text; // xml 결과
+        //String apiURL = "https://openapi.naver.com/v1/search/blog?query=" + text;    // json 결과
+        String apiURL = "https://openapi.naver.com/v1/search/blog.xml?query="+ text; // xml 결과
 
 
         Map<String, String> requestHeaders = new HashMap<>();
