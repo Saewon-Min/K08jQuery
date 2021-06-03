@@ -108,4 +108,5 @@ function checkFrm(){
 		JSON 데이터를 뿌려봅시다
 	</div>
 </div>	
+</body>
 </html>
