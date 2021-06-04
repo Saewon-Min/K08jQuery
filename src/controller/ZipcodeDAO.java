@@ -17,6 +17,7 @@ public class ZipcodeDAO {
 	PreparedStatement psmt; 
 	ResultSet rs;
 	
+	// 기본생성자에서 DBCP(커넥션풀)을 통해 DB연결
 	public ZipcodeDAO() {
 		try {
 			Context ctx = new InitialContext();
@@ -36,7 +37,7 @@ public class ZipcodeDAO {
 	
 	public void close() {
 		try {
-			
+			// 연결을 해제하는 것이 아니고 풀에 다시 반납한다.
 			if(rs!=null) rs.close();
 			if(psmt!=null) psmt.close();
 			if(con!=null) con.close();
@@ -51,7 +52,8 @@ public class ZipcodeDAO {
 	public ArrayList<String> getSido(){
 	
 		ArrayList<String> sidoAddr = new ArrayList<String>();
-		// 시,도의 중복을 제거한 데이터 추출
+		
+		// 시,도의 중복을 제거한 상태로 레코드를 가져옴
 		String sql = " select sido from zipcode "
 				+ " where 1=1 "
 				+ " group by sido "
