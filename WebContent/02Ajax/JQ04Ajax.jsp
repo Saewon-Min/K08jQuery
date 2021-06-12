@@ -48,7 +48,7 @@ $(function(){
 			// 콜백데이터 형식
 			dataType : "html",
 			// 요청시 전송방식
-			type : "get",
+			type : "post",
 			// get방식일때의 컨텐츠 타입
 			contentType : "text/html;charset:utf-8",
 			// 파라미터
